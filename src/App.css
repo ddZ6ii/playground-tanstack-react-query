@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* ---- Customize Tailwind dark mode ----- *\
+Toggle dark mode based on custom CSS selector instead of the prefers-color-scheme media query.
+See: https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------ Customize Tailwind theme ------- *\
+Tailwind theme customization based on CSS global variables (see below).
+See: https://tailwindcss.com/docs/theme
+*/
+@theme {
+  --color-primary-500: rgba(var(--primary));
+  --color-secondary-100: rgba(var(--secondary));
+  --color-secondary-500: rgba(var(--secondary));
+  --color-accent-50: rgba(var(--accent-50));
+  --color-accent-500: rgba(var(--accent-500));
+  --color-accent-600: rgba(var(--accent-600));
+}
+
+/* ------------ CSS variables ------------ *\
+Use CSS variables to dynamically change colors throughout the applications when switching theme.
+
+These variables are referenced from Tailwind `@theme` directive to create custom and re-usable color names via Tailwind classes.
+
+Here only `channel values` are defined (the color itself is derived from these values in the Tailwind config. file) to allow changing the opacity directly from classnames using Tailwind notation such as: `shadow-accent-500/20`.
+
+See: https://www.youtube.com/watch?v=vIBKSmWAdIA
+*/
+:root {
+  --primary: 241 245 249;
+  --secondary: 30 41 59;
+  --secondary-100: 143 148 157;
+
+  --accent-50: 238 242 255;
+  --accent-400: 89 92 230;
+  --accent-500: 99 102 241;
+  --accent-600: 79 70 229;
+}
+
+html {
+  background-color: rgba(var(--primary));
+  color: rgba(var(--secondary));
+}
+
+.dark {
+  --primary: 30 41 59;
+  --secondary: 241 245 249;
+  background-color: rgba(var(--primary));
+  color: rgba(var(--secondary));
+}
