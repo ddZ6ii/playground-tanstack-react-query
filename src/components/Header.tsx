@@ -2,8 +2,9 @@ import { ComponentProps, HTMLProps } from "react"
 import { GoSun } from "react-icons/go"
 import { IoMoon } from "react-icons/io5"
 import { twMerge } from "tailwind-merge"
-import { useThemeContext } from "@/hooks"
+import { SelectUser } from "@/components"
 import { Button } from "@/components/ui"
+import { useThemeContext } from "@/hooks"
 
 export default function Header() {
   const { theme, changeTheme } = useThemeContext()
@@ -13,6 +14,7 @@ export default function Header() {
   }
   return (
     <StyledHeader>
+      <SelectUser />
       <ToggleThemeBtn onClick={handleClick}></ToggleThemeBtn>
     </StyledHeader>
   )
@@ -23,7 +25,7 @@ function StyledHeader({
   className = "",
   ...restProps
 }: HTMLProps<HTMLHeadElement>) {
-  const baseStyle = "sticky top-0 p-4 text-right"
+  const baseStyle = "sticky top-0 px-8 py-4 flex items-center justify-between"
   return (
     <header className={twMerge(baseStyle, className)} {...restProps}>
       {children}

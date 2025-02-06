@@ -1,50 +1,30 @@
-# React + TypeScript + Vite
+# Tanstack React Query
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React-TypeScript starter project powered by Vite implements **modern API fetching** using:
 
-Currently, two official plugins are available:
+- `axios`: promise-based HTTP client for fetching data from a mock API
+- `json-server`: mocks a RESTful API using a JSON file as the data source
+- `@tanstack/react-query`: asynchronous global **_"server state"_** management (_i.e._ data owned on the server side) with "_stale-while-revalidate_" caching strategy
+- `zustand`: global **_"client state"_** management (_i.e._ data owned on the client side) based on an immutable state model and Flux pattern
+- `react-error-boundary`: centralizes React error handling. Catch runtime errors raised from anywhere in the component tree, preventing the application to crash and improve the user experience by displaying a fallback UI instead
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project also uses the utility-first framework `tailwindcss` for styling the application.
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from "eslint-plugin-react"
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-})
-```
+1. Clone the project.
+   ```bash
+     git clone {GITHUB_REPO_URL}
+   ```
+2. Install the dependencies:
+   ```bash
+     yarn install
+   ```
+3. Start a local JSON server (fake API and DB):
+   ```bash
+     yarn run server
+   ```
+4. Run the application locally on a development server:
+   ```bash
+     yarn run dev
+   ```

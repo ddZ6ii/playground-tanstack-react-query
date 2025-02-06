@@ -11,9 +11,13 @@ Tailwind theme customization based on CSS global variables (see below).
 See: https://tailwindcss.com/docs/theme
 */
 @theme {
-  --color-primary-500: rgba(var(--primary));
-  --color-secondary-100: rgba(var(--secondary));
-  --color-secondary-500: rgba(var(--secondary));
+  --color-primary-100: rgba(var(--primary-100));
+  --color-primary-200: rgba(var(--primary-200));
+  --color-primary-300: rgba(var(--primary-300));
+  --color-primary-400: rgba(var(--primary-400));
+  --color-primary-500: rgba(var(--primary-500));
+  --color-secondary-100: rgba(var(--secondary-100));
+  --color-secondary-500: rgba(var(--secondary-500));
   --color-accent-50: rgba(var(--accent-50));
   --color-accent-500: rgba(var(--accent-500));
   --color-accent-600: rgba(var(--accent-600));
@@ -29,9 +33,14 @@ Here only `channel values` are defined (the color itself is derived from these v
 See: https://www.youtube.com/watch?v=vIBKSmWAdIA
 */
 :root {
-  --primary: 241 245 249;
-  --secondary: 30 41 59;
+  --primary-100: 48 49 50;
+  --primary-200: 96 98 100;
+  --primary-300: 145 147 149;
+  --primary-400: 193 196 199;
+  --primary-500: 241 245 249;
+
   --secondary-100: 143 148 157;
+  --secondary-500: 30 41 59;
 
   --accent-50: 238 242 255;
   --accent-400: 89 92 230;
@@ -40,13 +49,13 @@ See: https://www.youtube.com/watch?v=vIBKSmWAdIA
 }
 
 html {
-  background-color: rgba(var(--primary));
-  color: rgba(var(--secondary));
+  background-color: rgba(var(--primary-500));
+  color: rgba(var(--secondary-500));
 }
 
 .dark {
-  --primary: 30 41 59;
-  --secondary: 241 245 249;
-  background-color: rgba(var(--primary));
-  color: rgba(var(--secondary));
+  --primary-500: 30 41 59;
+  --secondary-500: 241 245 249;
+  background-color: rgba(var(--primary-500));
+  color: rgba(var(--secondary-500));
 }

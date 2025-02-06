@@ -22,9 +22,12 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": resolve(join(import.meta.dirname, "src/")),
+      "@api": resolve(join(import.meta.dirname, "src/api")),
       "@components": resolve(join(import.meta.dirname, "src/components")),
       "@contexts": resolve(join(import.meta.dirname, "src/contexts")),
+
       "@hooks": resolve(join(import.meta.dirname, "src/hooks")),
+      "@services": resolve(join(import.meta.dirname, "src/services")),
       "@store": resolve(join(import.meta.dirname, "src/store")),
       "@types": resolve(join(import.meta.dirname, "src/types")),
       "@utils": resolve(join(import.meta.dirname, "src/utils")),
